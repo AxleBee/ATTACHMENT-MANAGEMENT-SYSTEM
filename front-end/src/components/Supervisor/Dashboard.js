@@ -86,14 +86,14 @@ function SupervisorLogin() {
             </div>
           </nav>
           <h2>Submissions</h2>
-          <table class="table align-middle mb-0 bg-white">
+
+          {/* data table */}
+          <table class="table align-middle mb-0 bg-white w-auto ">
             <thead class="bg-light">
               <tr>
-                <th>Name</th>
-                <th>Title</th>
-                <th>Status</th>
-                <th>Position</th>
-                <th>Actions</th>
+                <th>Student Name</th>
+                <th>Organistion</th>
+                <th>Activity</th>
               </tr>
             </thead>
             <tbody>
@@ -117,15 +117,9 @@ function SupervisorLogin() {
                   <p class="text-muted mb-0">IT department</p>
                 </td>
                 <td>
-                  <span class="badge badge-success rounded-pill d-inline">
-                    Active
-                  </span>
-                </td>
-                <td>Senior</td>
-                <td>
-                  <button type="button" class="btn btn-link btn-sm btn-rounded">
-                    Edit
-                  </button>
+                  <a href="#" class="badge badge-success rounded-pill d-inline">
+                    view
+                  </a>
                 </td>
               </tr>
               <tr>
@@ -148,19 +142,9 @@ function SupervisorLogin() {
                   <p class="text-muted mb-0">Finance</p>
                 </td>
                 <td>
-                  <span class="badge badge-primary rounded-pill d-inline">
-                    Onboarding
-                  </span>
-                </td>
-                <td>Junior</td>
-                <td>
-                  <button
-                    type="button"
-                    class="btn btn-link btn-rounded btn-sm fw-bold"
-                    data-mdb-ripple-color="dark"
-                  >
-                    Edit
-                  </button>
+                  <a href="#" class="badge badge-success rounded-pill d-inline">
+                    view
+                  </a>
                 </td>
               </tr>
               <tr>
@@ -183,19 +167,9 @@ function SupervisorLogin() {
                   <p class="text-muted mb-0">UI/UX</p>
                 </td>
                 <td>
-                  <span class="badge badge-warning rounded-pill d-inline">
-                    Awaiting
-                  </span>
-                </td>
-                <td>Senior</td>
-                <td>
-                  <button
-                    type="button"
-                    class="btn btn-link btn-rounded btn-sm fw-bold"
-                    data-mdb-ripple-color="dark"
-                  >
-                    Edit
-                  </button>
+                  <a href="#" class="badge badge-success rounded-pill d-inline">
+                    view
+                  </a>
                 </td>
               </tr>
             </tbody>
