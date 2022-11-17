@@ -17,6 +17,8 @@ p {
 .wrapper {
   display: flex;
   align-items: stretch;
+  justify-content: center;
+  width: auto;
 }
 
 #sidebar {
@@ -31,7 +33,7 @@ p {
 }
 
 #sidebar.active {
-  margin-left: -250px;
+  margin-left: -350px;
 }
 
 a,
@@ -100,9 +102,10 @@ ul ul a {
   border-radius: 100px;
   color: white;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 700px) {
   #sidebar {
-    margin-left: -250px;
+    margin-left: -350px;
   }
   #sidebar.active {
     margin-left: 0;
