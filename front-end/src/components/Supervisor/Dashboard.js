@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-
-function SupervisorLogin() {
+function SupervisorDashboard() {
   const [backToTopButton, setBackToTopButton] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -20,8 +19,25 @@ function SupervisorLogin() {
     });
   };
 
+  // fetching api data
+  const [movies, setMovies] = useState([]);
+
+  // const fetchData = () => {};
+
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key=1a612bf729e479b9f236c64a3ddeb94b"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setMovies(data["results"]);
+        // console.log(movies)
+      });
+  }, []);
+
+  // console.log(movies);
   return (
-    <div class="container">
+    <div class="continer-fluid">
       <div class=" wrapper">
         {/* <!-- Sidebar  --> */}
         <nav id="sidebar">
@@ -53,7 +69,7 @@ function SupervisorLogin() {
         </nav>
 
         {/* <!-- Page Content  --> */}
-        <div id="content" class="m-2">
+        <div id="content" class="m-3">
           <nav class="navbar  navbar-light bg-light">
             <div class="container-fluid">
               <button
@@ -77,7 +93,7 @@ function SupervisorLogin() {
                   aria-expanded="false"
                 ></button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="/">
                     <i class="fa fa-sign-out" aria-hidden="true"></i>
                     &nbsp;&nbsp; Logout
                   </a>
@@ -92,86 +108,48 @@ function SupervisorLogin() {
             <thead class="bg-light">
               <tr>
                 <th>Student Name</th>
+                <th>Title</th>
                 <th>Organistion</th>
                 <th>Activity</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img
-                      src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                      alt=""
-                      style={{ width: "45px", height: "45px" }}
-                      class="rounded-circle"
-                    />
-                    <div class="ms-3">
-                      <p class="fw-bold mb-1">John Doe</p>
-                      <p class="text-muted mb-0">john.doe@gmail.com</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <p class="fw-normal mb-1">Software engineer</p>
-                  <p class="text-muted mb-0">IT department</p>
-                </td>
-                <td>
-                  <a href="#" class="badge badge-success rounded-pill d-inline">
-                    view
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img
-                      src="https://mdbootstrap.com/img/new/avatars/6.jpg"
-                      class="rounded-circle"
-                      alt=""
-                      style={{ width: "45px", height: "45px" }}
-                    />
-                    <div class="ms-3">
-                      <p class="fw-bold mb-1">Alex Ray</p>
-                      <p class="text-muted mb-0">alex.ray@gmail.com</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <p class="fw-normal mb-1">Consultant</p>
-                  <p class="text-muted mb-0">Finance</p>
-                </td>
-                <td>
-                  <a href="#" class="badge badge-success rounded-pill d-inline">
-                    view
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img
-                      src="https://mdbootstrap.com/img/new/avatars/7.jpg"
-                      class="rounded-circle"
-                      alt=""
-                      style={{ width: "45px", height: "45px" }}
-                    />
-                    <div class="ms-3">
-                      <p class="fw-bold mb-1">Kate Hunington</p>
-                      <p class="text-muted mb-0">kate.hunington@gmail.com</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <p class="fw-normal mb-1">Designer</p>
-                  <p class="text-muted mb-0">UI/UX</p>
-                </td>
-                <td>
-                  <a href="#" class="badge badge-success rounded-pill d-inline">
-                    view
-                  </a>
-                </td>
-              </tr>
+              {movies.map((movie, index) => {
+                return (
+                  <tr key={index}>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <img
+                          // src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                          alt=""
+                          style={{ width: "45px", height: "45px" }}
+                          class="rounded-circle"
+                        />
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1">{movie.id}</p>
+                          <p class="text-muted mb-0">john.doe@gmail.com</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">{movie.title}</div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                      <p class="text-muted mb-0">IT department</p>
+                    </td>
+                    <td>
+                      <a
+                        href="#"
+                        class="badge badge-success rounded-pill d-inline"
+                      >
+                        view
+                      </a>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -188,4 +166,4 @@ function SupervisorLogin() {
   );
 }
 
-export default SupervisorLogin;
+export default SupervisorDashboard;
