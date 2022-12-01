@@ -71,6 +71,21 @@
       $(document).ready(function () {
           $('#sidebarCollapse').on('click', function () {
               $('#sidebar').toggleClass('active');
+          });
+
+          $('#addFeedback').on('click', ()=>{
+            $('#feedback').css("display", "block")
+            $('#addFeedback').css("display", "none")
+            $(document).scrollTop($(document).height());
+            
+          });
+
+
+          $('#feedback').on('submit', (e)=>{
+            e.preventDefault();
+            $('#addFeedback').css("display", "block");
+            $('#feedback').css("display", "none");
+            
           })
       });
   </script>
