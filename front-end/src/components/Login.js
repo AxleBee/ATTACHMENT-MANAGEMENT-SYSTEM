@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../components/'
+import './css/Style.css'
 function Login() {
   var x = document.getElementById("login");
   var y = document.getElementById("signup");
@@ -30,32 +30,9 @@ function Login() {
     }
   };
   return (
-    // <div className="container">
-    //   <div className="row">
-    //     <div className="col-md-4" align="center"></div>
-    //     <div className="col-md-4">
-    //       <button
-    //         type="button"
-    //         className="btn btn-sm btn-success"
-    //         onClick={handleSubmit}
-    //       >
-    //         Login
-    //       </button>
-    //     </div>
-    //     <div className="col-md-4"></div>
-    //   </div>
-    // </div>
     <html>
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
         <title>LOGIN AND REGISTRATION FORM</title>
-        <link rel="stylesheet" href='' />
       </head>
       <body>
         <div className="hero">
