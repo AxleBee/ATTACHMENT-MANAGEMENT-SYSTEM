@@ -1,5 +1,11 @@
-import "../css/style1.css"
+import "../css/style1.css";
 function Dashboard() {
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".sidebarBtn");
+
+  sidebarBtn.onclick = function () {
+    sidebar.classList.toggle("active");
+  };
   return (
     <body>
       <div class="sidebar">
