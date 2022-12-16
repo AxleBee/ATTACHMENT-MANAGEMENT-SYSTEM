@@ -124,3 +124,9 @@ ul ul a {
     margin-left: 0;
   }
 }
+
+.react-daterange-picker__wrapper{
+  border-radius: 45px;
+  box-shadow: 0 0 10px #3c7c46;
+  
+}
