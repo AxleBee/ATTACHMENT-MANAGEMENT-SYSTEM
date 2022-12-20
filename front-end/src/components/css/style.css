@@ -13,14 +13,17 @@
   position: absolute;
 }
 
-.dropdown {
+ /* .dropdown {
   min-width: 15em;
   position: relative;
   margin: 2em;
 }
+
+
 .dropdown * {
   box-sizing: border-box;
 }
+
 .select {
   background: gray;
   color: #fff;
@@ -39,8 +42,8 @@
 }
 .select:hover {
   background: lightgreen;
-}
-.caret {
+} */
+/* .caret {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
@@ -69,8 +72,8 @@
   transition: 0.2s;
   z-index: 1;
 }
-
-.form-box {
+*/
+ .form-box {
   width: 400px;
   height: 550px;
   position: relative;
@@ -79,7 +82,8 @@
   padding: 5px;
   overflow: hidden;
   border-radius: 10px;
-}
+} 
+
 
 .button-box {
   width: 200px;
@@ -87,6 +91,8 @@
   position: relative;
   box-shadow: 0 0 20px 9px lightgreen;
   border-radius: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .toggle-btn {
@@ -108,7 +114,7 @@
   border-radius: 30px;
   transition: 0.5s;
 }
-
+/*
 h1 {
   margin: 60px auto;
   padding: 0 0 20px;
@@ -171,4 +177,4 @@ span {
 }
 #signup {
   left: 450px;
-}
+} */ 

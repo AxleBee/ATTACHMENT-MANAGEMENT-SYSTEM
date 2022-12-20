@@ -30,11 +30,7 @@ function Login() {
     }
   };
   return (
-    <html>
-      <head>
-        <title>LOGIN AND REGISTRATION FORM</title>
-      </head>
-      <body>
+      <>
         <div className="hero">
           <div class="form-box">
             <div class="button-box">
@@ -105,8 +101,7 @@ function Login() {
             <h1>ATTACHMENTS MANAGEMENT SYSTEM</h1>
           </div>
         </div>
-      </body>
-    </html>
+      </>
   );
 }
 export default Login;
