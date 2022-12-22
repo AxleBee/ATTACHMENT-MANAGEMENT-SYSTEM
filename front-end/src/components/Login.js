@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./css/Style.css";
+import "./css/style.css";
 function Login() {
   var x = document.getElementById("login");
   var y = document.getElementById("signup");
