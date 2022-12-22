@@ -5,7 +5,6 @@ import { UserList } from './users';
 import { Dashboard } from './Dashboard';
 import jsonServerProvider from 'ra-data-json-server';
 
-<<<<<<< HEAD
 const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
 function App() {
   return (
@@ -34,17 +33,6 @@ function App() {
     </>
   );
 }
-=======
-
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
-const App = () => (
-<Admin dataProvider={dataProvider} dashboard={Dashboard} >
-
-  <Resource name='posts' list={PostList} edit={PostEdit} create ={PostCreate}/>
-  <Resource name='users' list={UserList}/>
-</Admin>
-)
->>>>>>> mary
 export default App;
 
 
