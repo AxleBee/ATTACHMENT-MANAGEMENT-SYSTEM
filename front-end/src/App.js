@@ -22,8 +22,8 @@ function App() {
             path="/supervisor-dashboard"
             element={<SupervisorDashboard />}
           />
-          <Route path="/" element={<Login />} />
           <Route path="/feedback/:id" element={<LogBookFeeback />} />
+          <Route path="/" element={<Login />} />
           <Route path="/employer-dashboard" element={<Dashboard />} />
           <Route path="/employer-feedback" element={<Employer />} />
         </Routes>

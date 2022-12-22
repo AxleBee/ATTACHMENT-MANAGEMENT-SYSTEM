@@ -11,13 +11,17 @@ import "react-calendar/dist/Calendar.css";
 function LogBookFeeback() {
   const [value, onChange] = useState([new Date(), new Date()]);
   let user = useParams();
-  const date = document.getElementById("dater")
-    ? document.getElementById("dater").value
+  const dateFrom = document.querySelector('input[name="daterange_from"]')
+    ? document.querySelector('input[name="daterange_from"]').value
     : "";
-  let myDate = new Date(date.replace(/\//g, "-"));
 
+    const dateTo = document.querySelector('input[name="daterange_to"]')
+    ? document.querySelector('input[name="daterange_to"]').value
+    : "";
+  let from = new Date(dateFrom.replace(/\//g, "-"));
+ let to = new Date(dateTo.replace(/\//g, "-"));
   console.log(
-    `${myDate.getFullYear()}-${myDate.getMonth() + 1}-${myDate.getDate()}`
+    `${from.getFullYear()}-${from.getMonth() + 1}-${from.getDate()}`
   );
 
   // fetching api data
@@ -88,7 +92,7 @@ function LogBookFeeback() {
                 >
                   <div className="col-md-3"> DATE-RANGE</div>
                   <div className="col-md-9 text-center">
-                   <DateRangePicker onChange={onChange} value={value} />
+                    <DateRangePicker onChange={onChange} value={value} />
                   </div>
                 </div>
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
